@@ -1,0 +1,82 @@
+<mvc:View controllerName="app.flightbookings.controller.BookingsView"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:comp="sap.ui.comp.filterbar"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    
+        <content />
+        <comp:FilterBar >
+            <comp:filterItems>
+                <comp:FilterItem name="Location ID" label="Filter Location ID">
+                    <comp:control>
+                        <Label  text="Location ID" ></Label>
+                        <Input id="idLocID" placeholder="Enter Location ID" liveChange="onSearch"></Input>
+                    </comp:control>
+                </comp:FilterItem>
+ 
+                <comp:FilterItem name="Location Desc" label="Filter Location Description">
+                    <comp:control>
+                        <Label  text="Location Desc" ></Label>
+                        <Input id="idLocDesc" placeholder="Enter Location Desc" liveChange="onSearch"></Input>
+                    </comp:control>
+                </comp:FilterItem>
+            </comp:filterItems>
+        </comp:FilterBar>
+
+        <Table id="flightTable" items="{path: 'FlightModel>/', sorter: {path: 'FlightModel>Connid', descending: false}}">
+            <columns>
+                <Column>
+                    <Text text="{i18n>Carrid}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Connid}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Bookid}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Fldate}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Class}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Customid}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Loccuram}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>OrderDate}"></Text>
+                </Column>
+                <Column>
+                    <Text text="{i18n>Cancelled}"></Text>
+                </Column>
+                <Column></Column>
+            </columns>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{FlightModel>Carrid}"></Text>
+                    <Text text="{FlightModel>Connid}"></Text>
+                    <Text text="{FlightModel>Bookid}"></Text>
+                    <Text text="{path: 'FlightModel>Fldate', formatter: '.formatDate'}"></Text>
+                    <Text text="{FlightModel>Customid}"></Text>
+                    <Text text="{FlightModel>Class}"></Text>
+                    <Text text="{FlightModel>Loccuram}"></Text>
+                    <Text text="{path: 'FlightModel>OrderDate', formatter: '.formatDate'}"></Text>
+                    <Text text="{FlightModel>Cancelled}"></Text>
+                    <Button icon="sap-icon://delete" press="onDelete"></Button>
+                </cells>
+            </ColumnListItem>
+        </Table>
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button id="btnCreate" text="{i18n>btnCreate}" press="onCreatePage"></Button>
+                <ToolbarSpacer />
+            </OverflowToolbar>
+        </footer>
+
+    </Page>
+</mvc:View>
