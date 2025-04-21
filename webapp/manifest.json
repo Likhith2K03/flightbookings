@@ -109,12 +109,23 @@
           "target": [
             "TargetBookingsView"
           ]
+        },
+        {
+          "name": "RouteCreateView",
+          "pattern": "create",
+          "target": [
+            "TargetCreateView"
+          ]
         }
       ],
       "targets": {
         "TargetBookingsView": {
           "id": "BookingsView",
           "name": "BookingsView"
+        },
+        "TargetCreateView": {
+          "id": "CreateView",
+          "name": "CreateView"
         }
       }
     },

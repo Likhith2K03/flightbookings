@@ -23,7 +23,7 @@
             </comp:filterItems>
         </comp:FilterBar>
 
-        <Table id="flightTable" items="{path: 'FlightModel>/', sorter: {path: 'FlightModel>Connid', descending: false}}">
+        <Table id="flightTable" items="{path: 'FlightModel>/', sorter: {path: 'Connid', descending: false}}">
             <columns>
                 <Column>
                     <Text text="{i18n>Carrid}"></Text>
@@ -65,7 +65,7 @@
                     <Text text="{FlightModel>Loccuram}"></Text>
                     <Text text="{path: 'FlightModel>OrderDate', formatter: '.formatDate'}"></Text>
                     <Text text="{FlightModel>Cancelled}"></Text>
-                    <Button icon="sap-icon://delete" press="onDelete"></Button>
+                    <Button icon="sap-icon://delete" press="onDelete" type="Attention"></Button>
                 </cells>
             </ColumnListItem>
         </Table>
@@ -73,7 +73,7 @@
         <footer>
             <OverflowToolbar>
                 <ToolbarSpacer />
-                <Button id="btnCreate" text="{i18n>btnCreate}" press="onCreatePage"></Button>
+                <Button id="btnCreate" text="{i18n>btnCreate}" press="onCreatePage" type="Emphasized"></Button>
                 <ToolbarSpacer />
             </OverflowToolbar>
         </footer>

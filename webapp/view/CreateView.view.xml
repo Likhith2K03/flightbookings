@@ -10,13 +10,13 @@
       <f:SimpleForm id="idCreateForm" editable="true" layout="ResponsiveGridLayout">
  
         <Label text="{i18n>Carrid}" />
-        <Input id="idCarrId" maxLength="3" placeholder="e.g. LH" />
+        <Input id="idCarrid" maxLength="3" placeholder="e.g. LH" />
  
         <Label text="{i18n>Connid}" />
-        <Input id="idConnId" maxLength="4" placeholder="e.g. 0400" />
+        <Input id="idConnid" maxLength="4" placeholder="e.g. 0400" />
  
         <Label text="{i18n>Bookid}" />
-        <Input id="idBookId" maxLength="8" placeholder="e.g. 00001234" />
+        <Input id="idBookid" maxLength="8" placeholder="e.g. 00001234" />
  
         <Label text="{i18n>Fldate}" />
         <DatePicker id="idFldate" width="100%" placeholder="Select flight date" />
@@ -41,8 +41,8 @@
         <CheckBox id="idCancelled" />
  
         <Toolbar>
-          <ToolbarSpacer />
           <Button text="Create" type="Emphasized" press="onCreate" />
+          <ToolbarSpacer />
         </Toolbar>
  
       </f:SimpleForm>
